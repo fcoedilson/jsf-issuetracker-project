@@ -2,6 +2,7 @@ package br.com.triadworks.issuetracker.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,8 +15,8 @@ public class Projeto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="SEQ_PROJETO")
-	@SequenceGenerator(name="SEQ_PROJETO", sequenceName="SEQ_PROJETO", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="PROJETO_ID", nullable = false)
 	private Long id;
 	private String nome;
 	

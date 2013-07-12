@@ -3,6 +3,7 @@ package br.com.triadworks.issuetracker.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
-import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Comentario implements Serializable {
@@ -18,8 +18,8 @@ public class Comentario implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="SEQ_COMENTARIO")
-	@SequenceGenerator(name="SEQ_COMENTARIO", sequenceName="SEQ_COMENTARIO", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="COMENTARIO_ID", nullable = false)
 	private Long id;
 	private String descricao;
 	
